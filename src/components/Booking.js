@@ -4,23 +4,6 @@ import booking from '../assets/images/booking.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'
 
-
-var mysql = require('mysql')
-
-var connection = mysql.createConnection({
-  host: '182.50.133.80',
-  user: 'tinggton_subhoji',
-  password: 'Cationstech@07',
-  database: 'tinggton_maindb'
-})
-
-connection.connect(function(err) {
-  if (err) throw err
-  console.log('You are now connected...')
-})
-
-
-
 const  Booking =()=>{
   const [ form, setForm ] = React.useState({})
   const [ errors, setErrors ] = React.useState({})
@@ -33,7 +16,7 @@ const  Booking =()=>{
 
 const handleSubmit=(e)=>{
   console.log("Form Values  :"+JSON.stringify(form))
-  const response = axios.post('/getOrder',form);
+  const response = axios.get('/getOrder');
   e.preventDefault()
 }
     return (

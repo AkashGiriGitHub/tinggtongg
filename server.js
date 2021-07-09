@@ -18,7 +18,7 @@ connection.connect(function(err) {
 
 app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
 
-app.post('/getOrder', (req, res) => { //Line 9
+app.get('/getOrder', (req, res) => { //Line 9
   
   console.log(" req.body "+ JSON.stringify(req.body))
           connection.query('SELECT * FROM order_master', function(err, results) {
