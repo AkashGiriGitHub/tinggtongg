@@ -3,6 +3,24 @@ import { Form,Container,Button,Row,Col } from 'react-bootstrap';
 import booking from '../assets/images/booking.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'
+
+
+var mysql = require('mysql')
+
+var connection = mysql.createConnection({
+  host: '182.50.133.80',
+  user: 'tinggton_subhoji',
+  password: 'Cationstech@07',
+  database: 'tinggton_maindb'
+})
+
+connection.connect(function(err) {
+  if (err) throw err
+  console.log('You are now connected...')
+})
+
+
+
 const  Booking =()=>{
   const [ form, setForm ] = React.useState({})
   const [ errors, setErrors ] = React.useState({})
@@ -14,16 +32,12 @@ const  Booking =()=>{
   }
 
 const handleSubmit=(e)=>{
-  // console.log("Form Values  :"+JSON.stringify(form))
-  alert("Form Values  :"+JSON.stringify(form))
-  axios.get('https://tinggtongg.com/sample_rest.php/get_order?id=6085').
-  then(resp=> console.log('Success')).
-  catch(error=> console.log('error'))
+  console.log("Form Values  :"+JSON.stringify(form))
+  const response = axios.post('/getOrder',form);
   e.preventDefault()
-  
 }
     return (
-      <Container >
+      <Container style={{marginTop:'5%'}}>
         <Row>
         <Col xs={12} lg={6}>
         <div className="hideMobile">  
@@ -33,7 +47,7 @@ const handleSubmit=(e)=>{
             alt="Laptop Repair Booking"/>
         </div>    
         </Col>
-        <Col xs={12} lg={6} style={{borderRadius:'30px',backgroundColor:'#abecdc'}}>
+        <Col xs={12} lg={5}>
         <Form id="myForm" >
         <Form.Group controlId="ControlInput1" onChange={ e => setField('ControlInput1', e.target.value) }>
         <Form.Label>Name</Form.Label>
