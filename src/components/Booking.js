@@ -16,7 +16,7 @@ const  Booking =()=>{
 
 const handleSubmit=(e)=>{
   console.log("Form Values  :"+JSON.stringify(form))
-  const response = axios.get('/getOrder');
+  const response = axios.post('/getOrder',form);
   e.preventDefault()
 }
     return (
@@ -32,23 +32,23 @@ const handleSubmit=(e)=>{
         </Col>
         <Col xs={12} lg={5}>
         <Form id="myForm" >
-        <Form.Group controlId="ControlInput1" onChange={ e => setField('ControlInput1', e.target.value) }>
+        <Form.Group controlId="name" onChange={ e => setField('name', e.target.value) }>
         <Form.Label>Name</Form.Label>
             <Form.Control type="text" placeholder="" />
           </Form.Group>
-          <Form.Group controlId="ControlInput2" onChange={ e => setField('ControlInput2', e.target.value) }>
+          <Form.Group controlId="phoneNo" onChange={ e => setField('phoneNo', e.target.value) }>
           <Form.Label>Mobile No</Form.Label>
             <Form.Control type="text" placeholder="" />
           </Form.Group>
-          <Form.Group controlId="ControlInput3" onChange={ e => setField('ControlInput3', e.target.value) }>
+          <Form.Group controlId="email" onChange={ e => setField('email', e.target.value) }>
           <Form.Label>Email</Form.Label>
             <Form.Control type="email" placeholder="" />
           </Form.Group>
-          <Form.Group controlId="ControlTextarea4" onChange={ e => setField('ControlTextarea4', e.target.value) }>
+          <Form.Group controlId="issues" onChange={ e => setField('issues', e.target.value) }>
             <Form.Label>Issues</Form.Label>
             <Form.Control as="textarea" rows={2} />
           </Form.Group>
-          <Form.Group controlId="ControlTextarea5" onChange={ e => setField('ControlTextarea5', e.target.value) }>
+          <Form.Group controlId="address" onChange={ e => setField('address', e.target.value) }>
             <Form.Label>Address</Form.Label>
             <Form.Control as="textarea" rows={2} />
           </Form.Group>
