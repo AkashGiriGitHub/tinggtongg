@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const Moment = require('moment')
 const mysql = require('mysql')
 
 const app = express()
@@ -83,7 +84,24 @@ app.post('/order', (req, res) => {
         
         const params = req.body
         console.log("Body : "+JSON.stringify(req.body))
-        connection.query("INSERT into order_master SET service_type='Laptop Repair',service_desc='Laptop Repair',time_slot='10-07-2021',cust_name='Akash_10_07_2021_1',cust_phone_no='8378809034',cust_address='Navi Mumbai',cust_city='Mumbai',email='akkiproid@gmail.com',cust_area='Dombivili',reject_reason='No',order_date='09-07-2021', service_date='09-07-2021', userid='9975212', coupon_code='abcd',assigned_to='unassigned', status='unassigned'", params, (err, rows) => {
+        connection.query("INSERT INTO order_master \
+        SET \
+            service_type = 'Laptop Repair',\
+            service_desc = '"+req.body.issues+"',\
+            time_slot = '10 a.m - 6 p.m',\
+            cust_name = '"+req.body.name+"',\
+            cust_phone_no = '"+req.body.phoneNo+"',\
+            cust_address = '"+req.body.address+"',\
+            cust_city = 'Mumbai',\
+            email = '"+req.body.email+"',\
+            cust_area = 'Mumbai',\
+            reject_reason = 'No',\
+            order_date = '"+Moment(new Date()).format('YYYY-MM-DD')+"',\
+            service_date = '"+Moment(new Date()).format('DD-MM-YYYY')+"',\
+            userid = 'Guest',\
+            coupon_code = '',\
+            assigned_to = 'unassigned',\
+            STATUS = 'unassigned'", params, (err, rows) => {
         connection.release() // return the connection to pool
         if (!err) {
             res.send(`Order with the record ID  has been added.`)
@@ -94,6 +112,7 @@ app.post('/order', (req, res) => {
         console.log('The data from order table are:11 \n', rows)
 
         })
+        
     })
 });
 
