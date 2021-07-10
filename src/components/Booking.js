@@ -16,7 +16,7 @@ const  Booking =()=>{
 
 const handleSubmit=(e)=>{
   console.log("Form Values  :"+JSON.stringify(form))
-  const response = axios.post('/getOrder',form);
+  const response = axios.post('/order',form);
   e.preventDefault()
 }
     return (
