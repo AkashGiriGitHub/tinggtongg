@@ -117,8 +117,8 @@ export default function PersistentDrawerLeft() {
           <div className="hideMobile">
             <Link to={'/'} className="nav-link" onClick={handleDrawerClose}> Home </Link>
             <Link to={'/book'} className="nav-link" onClick={handleDrawerClose}>Book</Link>
-            <Link to={'/contact'} className="nav-link" onClick={handleDrawerClose}>Contact</Link>
-            <Link to={'/about'} className="nav-link" onClick={handleDrawerClose}>About</Link>
+            {/* <Link to={'/contact'} className="nav-link" onClick={handleDrawerClose}>Contact</Link> */}
+            {/* <Link to={'/about'} className="nav-link" onClick={handleDrawerClose}>About</Link> */}
           </div>
           </Nav>
         </Navbar>
@@ -143,8 +143,8 @@ export default function PersistentDrawerLeft() {
         
         <Link to={'/'} className="nav-link" onClick={handleDrawerClose}> Home </Link>
         <Link to={'/book'} className="nav-link" onClick={handleDrawerClose}>Book</Link>
-        <Link to={'/contact'} className="nav-link" onClick={handleDrawerClose}>Contact</Link>
-        <Link to={'/about'} className="nav-link" onClick={handleDrawerClose}>About</Link>
+        {/* <Link to={'/contact'} className="nav-link" onClick={handleDrawerClose}>Contact</Link>
+        <Link to={'/about'} className="nav-link" onClick={handleDrawerClose}>About</Link> */}
            
       </Drawer>
       <main

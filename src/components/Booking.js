@@ -15,10 +15,17 @@ const  Booking =()=>{
   }
 
 const handleSubmit=(e)=>{
-  console.log("Form Values  :"+JSON.stringify(form))
-  const response = axios.post('/order',form);
+  const response = axios.post('/order',form)
+  .then(resp=>
+    console.log("response : "+JSON.stringify(resp))
+  )
+  .catch(error=>
+      console.log("Error :"+ JSON.stringify(error))
+  )
+  // setForm({})
   e.preventDefault()
 }
+console.log("Form : "+JSON.stringify(form))
     return (
       <Container style={{marginTop:'5%'}}>
         <Row>
