@@ -13,20 +13,20 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use('/', express.static('./build'));
 // MySQL
-// const pool  = mysql.createPool({
-//     connectionLimit : 10,
-//     host: '182.50.133.80',
-//     user: 'tinggton_subhoji',
-//     password: 'Cationstech@07',
-//     database: 'tinggton_maindb'
-// })
-
 const pool  = mysql.createPool({
     connectionLimit : 10,
-    host: '103.212.121.53',
-    user: 'ockktgtp_tinggtongg',
+    host: '182.50.133.80',
+    user: 'tinggton_subhoji',
     password: 'Cationstech@07',
-    database: 'ockktgtp_tinggtongg_db'
+    database: 'tinggton_maindb'
+})
+
+// const pool  = mysql.createPool({
+//     connectionLimit : 10,
+//     host: '103.212.121.53',
+//     user: 'ockktgtp_tinggtongg',
+//     password: 'Cationstech@07',
+//     database: 'ockktgtp_tinggtongg_db'
 })
 // Get all beers
 app.get('/orders', (req, res) => {
