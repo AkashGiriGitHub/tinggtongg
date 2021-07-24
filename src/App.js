@@ -6,6 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import PersistentDrawerLeft from './components/PersistentDrawerLeft'
 import Booking from './components/Booking'
+import Footer from './components/Footer';
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
           <Route path='/about' component={About} />
           <Route path='/book' component={Booking} /> 
       </Switch>
+    <Footer></Footer>
     </div>
   </Router>
   );
