@@ -4,9 +4,10 @@ import booking from '../assets/images/booking.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'
 
-const  Booking =()=>{
+const  Booking =(props)=>{
   const [ form, setForm ] = React.useState({})
-  const [ errors, setErrors ] = React.useState({})
+  const [ error, setError ] = React.useState(null)
+  const [saved,setSaved] = React.useState(false)
   const setField = (field, value) => {
     setForm({
       ...form,
@@ -14,19 +15,20 @@ const  Booking =()=>{
     })
   }
 
-const handleSubmit=(e)=>{
+const handleSubmit= (e)=>{
   const response = axios.post('/order',form)
-  .then(resp=>
-    console.log("response : "+JSON.stringify(resp))
-  )
-  .catch(error=>
-      console.log("Error :"+ JSON.stringify(error))
-  )
-  // setForm({})
-  e.preventDefault()
-}
-console.log("Form : "+JSON.stringify(form))
-    return (
+  .then(resp=>{
+    props.history.push({
+      pathname: '/confirm',
+      search: '',
+      state: { detail: form }
+    })
+    
+  })
+  .catch(error=>setError("Error in Booking"))
+  }
+   
+return (
       <Container style={{marginTop:'5%'}}>
         <Row>
         <Col xs={12} lg={6}>
@@ -38,6 +40,7 @@ console.log("Form : "+JSON.stringify(form))
         </div>    
         </Col>
         <Col xs={12} lg={5}>
+        <div>{error}</div>
         <Form id="myForm" >
         <Form.Group controlId="name" onChange={ e => setField('name', e.target.value) }>
         <Form.Label>Name</Form.Label>
@@ -60,7 +63,7 @@ console.log("Form : "+JSON.stringify(form))
             <Form.Control as="textarea" rows={2} />
           </Form.Group>
           <Form.Group style={{display:'grid'}}>
-          <Button  color='primary' variant='success' type='submit' onClick={handleSubmit}>
+          <Button  color='primary' variant='success' onClick={handleSubmit}>
                       Submit
           </Button>
           </Form.Group>

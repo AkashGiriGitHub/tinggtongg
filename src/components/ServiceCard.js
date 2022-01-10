@@ -5,13 +5,16 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   root: {
     borderRadius:'20px',
     width:'100%',
-    height:150,
-    marginTop:20
+    height:300,
+    padding:'50px',
+    marginBottom:'10px',
+    background: "linear-gradient(#51CFA0 , #F2F1EB)" 
   },
   media: {
     alignContent:"center",
@@ -20,30 +23,26 @@ const useStyles = makeStyles({
     display: "inline-block"
   },
   content:{
-    fontSize:15,
+    fontSize:20,
     color:'#104a61'
   }
 });
 
-export default function MediaCard(props) {
+export default function ServiceCard(props) {
   const classes = useStyles();
 
   return (
     <>
     <Card className={classes.root}>
-    <CardContent>
-        <h2 className={classes.content}>{props.content}</h2>
-    </CardContent>
-      <CardActionArea>
+    <CardActionArea>
+      <h2 className={classes.content}>{props.content}</h2>
         <CardMedia
           className={classes.media}
           image={props.image}
           title={props.content}
-        />
-      </CardActionArea>
-      <CardActionArea>
-        <CardMedia>{props.servicesText}</CardMedia>
-      </CardActionArea>
+        ></CardMedia>
+            <Typography>{props.servicesText}</Typography>
+    </CardActionArea>
     </Card>
     <Typography>      
     </Typography>

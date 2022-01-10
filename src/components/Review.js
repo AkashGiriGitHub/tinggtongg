@@ -10,7 +10,7 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import fixing from '../assets/images/fixing.png'
-import pic from '../assets/images/person7.jpg'
+import pic from '../assets/images/man.png'
 import ReviewCard from './ReviewCard'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -18,13 +18,37 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const tutorialSteps = [
 
     {
-        subHead: 'Formatting and Anti Virus',
-        label: 'Formatting of your machine with antivirus and data restoration.'
+        custName1: 'Krutika Shinde',
+        comment1: 'Vinod Singh professional worker good communication with client.💯% satisfied work.. thank you..Highly recommended..',
+        rating1:5,
+        custName2: 'Amrtha Kasturi Rangan',
+        comment2: 'Mr. Vinod Singh was efficient and fixed the problem quickly. He was also following all covid protocols - had his sanitiser, was masked throughout the visit.',
+        rating2:5,
+        custName3: 'Sulit Fashions',
+        comment3: 'Mr .Vinod Singh very Good &  very Professional  ,Excellent Work Experiences .i am 100%  Satisfide Work .Highly Recommended.',
+        rating3:5,
+        custName4: 'Madhav krishnatri',
+        comment4: 'Very Professional and Helpful service received by Mr Vinod. Glad I chose the services. Thanks.',
+        rating4:5
     },
     {
-        subHead: 'Hard drive',
-        label: 'Avail this service for all issues such as blue screens,floating pixels etc.'
+        custName1: 'Sachin Naveen',
+        comment1: 'Really appreciate. Very nice service provided by Mr Vinod Singh . Very good behavior.rates are also very reasonable.',
+        rating1:5,
+        custName2: 'Priyanka Gawade',
+        comment2: 'Vinod singh is providing good quality and I am happy with that service',
+        rating2:5,
+        custName3: 'Deepak Sharma',
+        comment3: 'Responsive and responsible people... My laptop work was done by Mr vinod Singh, Very much professional or more than that..👍',
+        rating3:5,
+        custName4: 'Parth Marfatia',
+        comment4: 'Vinod did excellent  work  with limited  time good work.',
+        rating4:5,
     }
+    // {
+    //     subHead: 'Hard drive',
+    //     label: 'Avail this service for all issues such as blue screens,floating pixels etc.'
+    // }
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -84,30 +108,33 @@ function Review() {
                                 <Container style={{ padding: '20px' }}>
                                     <Row className="justify-content-md-center" style={{ textAlign: 'center' }}>
                                     <Col s={12} lg={6}>
-                                        <ReviewCard image={pic} content='Very Professional and Helpful service received by Mr Vinod. Glad I chose the services. Thanks.' custName='Madhav krishnatri'/>
+                                        <ReviewCard image={pic} 
+                                        custName={step.custName1}
+                                        content={step.comment1}
+                                        rating={step.rating1}
+                                        />
+                                        
                                     </Col>
                                     <Col s={12} lg={6}>
-                                        <ReviewCard image={pic} content='Mr. Vinod Singh was efficient and fixed the problem quickly. He was also following all covid protocols - had his sanitiser, was masked throughout the visit.' custName='Amrtha Kasturi Rangan'/>
-                                    </Col>
-                                    {/* <Col s={12} lg={3}>
-                                        <ReviewCard image={pic} content='Good service by Vinod Singh' custName='Girish Pawar'/>
-                                    </Col>
-                                    <Col s={12} lg={3}>
-                                        <ReviewCard image={pic} content='Vinod did excellent work with limited time good work.' custName='Parth Marfatia'/>
-                                    </Col> */}
-                                    </Row>
-                                    <Row className="justify-content-md-center" style={{ textAlign: 'center' }}>
-                                    {/* <Col s={12} lg={3}>
-                                    <ReviewCard image={pic} content='Vinod Singh professional worker good communication with client. 💯% satisfied work.. thank you.. Highly recommended..' custName='KRUTIKA SHINDE'/>
-                                    </Col>
-                                    <Col s={12} lg={3}>
-                                    <ReviewCard image={pic} content='Really appreciate. Very nice service provided by Mr Vinod Singh . Very good behavior.rates are also very reasonable.' custName='Sachin Naveen'/>
-                                    </Col> */}
-                                    <Col s={12} lg={6}>
-                                    <ReviewCard image={pic} content='Very fast Service' custName='Khortha Ka Deewana'/>
+                                        <ReviewCard image={pic} 
+                                        custName={step.custName2}
+                                        content={step.comment2}
+                                        rating={step.rating2}
+                                        />
                                     </Col>
                                     <Col s={12} lg={6}>
-                                    <ReviewCard image={pic} content='Responsive and responsible people... My laptop work was done by Mr vinod Singh, Very much professional or more than that..👍' custName='Deepak Sharma'/>
+                                        <ReviewCard image={pic} 
+                                        custName={step.custName3}
+                                        content={step.comment3}
+                                        rating={step.rating3}
+                                        />
+                                    </Col>
+                                    <Col s={12} lg={6}>
+                                        <ReviewCard image={pic} 
+                                        custName={step.custName4}
+                                        content={step.comment4}
+                                        rating={step.rating4}
+                                        />
                                     </Col>
                                     </Row>
                                 </Container>

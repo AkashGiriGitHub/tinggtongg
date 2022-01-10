@@ -23,11 +23,11 @@ const pool  = mysql.createPool({
 
 // const pool  = mysql.createPool({
 //     connectionLimit : 10,
-//     host: '103.212.121.53',
+//     host: 'localhost',
 //     user: 'ockktgtp_tinggtongg',
 //     password: 'Cationstech@07',
 //     database: 'ockktgtp_tinggtongg_db'
-})
+// })
 // Get all beers
 app.get('/orders', (req, res) => {
     pool.getConnection((err, connection) => {

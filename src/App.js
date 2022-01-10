@@ -7,20 +7,21 @@ import Contact from './components/Contact';
 import PersistentDrawerLeft from './components/PersistentDrawerLeft'
 import Booking from './components/Booking'
 import Footer from './components/Footer';
+import Confirm from './components/Confirm';
 function App() {
   return (
     <Router>
-    <div>
     <PersistentDrawerLeft/>
       <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/contact' component={Contact} />
           <Route path='/about' component={About} />
-          <Route path='/book' component={Booking} /> 
+          <Route path='/book' component={Booking} />
+          <Route path='/confirm' component={Confirm} /> 
       </Switch>
-    <Footer></Footer>
-    </div>
-  </Router>
+      <hr></hr>
+    <Footer/>  
+    </Router>
   );
 }
 

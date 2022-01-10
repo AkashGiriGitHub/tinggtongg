@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(0),
   },
   hide: {
     display: 'none',
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawerLeft() {
+export default function PersistentDrawerLeft(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -107,7 +107,7 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Link to={'/'} className="nav-link">
+          <Link to={'/'} className="nav-link" style={{padding:0}}>
               <Image src={logo} style={{ height: '80px', width: '180px' }} alt="logo"/>
             </Link>
           <Navbar bg="light" variant="light">
@@ -117,8 +117,6 @@ export default function PersistentDrawerLeft() {
           <div className="hideMobile">
             <Link to={'/'} className="nav-link" onClick={handleDrawerClose}> Home </Link>
             <Link to={'/book'} className="nav-link" onClick={handleDrawerClose}>Book</Link>
-            {/* <Link to={'/contact'} className="nav-link" onClick={handleDrawerClose}>Contact</Link> */}
-            {/* <Link to={'/about'} className="nav-link" onClick={handleDrawerClose}>About</Link> */}
           </div>
           </Nav>
         </Navbar>

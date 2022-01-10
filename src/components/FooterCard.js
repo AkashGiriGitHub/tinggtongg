@@ -11,7 +11,8 @@ const useStyles = makeStyles({
     borderRadius:'20px',
     width:'100%',
     height:150,
-    marginTop:20
+    marginTop:20,
+    background: "linear-gradient(#51CFA0 , #F2F1EB)" 
   },
   media: {
     alignContent:"center",
@@ -20,12 +21,12 @@ const useStyles = makeStyles({
     display: "inline-block"
   },
   content:{
-    fontSize:15,
-    color:'rgb(4 125 138)'
+    fontSize:20,
+    color:'#104a61'
   }
 });
 
-export default function MediaCard(props) {
+export default function FooterCard(props) {
   const classes = useStyles();
 
   return (
