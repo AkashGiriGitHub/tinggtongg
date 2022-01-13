@@ -1,5 +1,6 @@
 {
-  "name": "laptoprepairinmumbai",
+  "name": "my-app",
+  "homepage": "https://tinggtongg.com",
   "version": "1.1.0",
   "private": true,
   "dependencies": {
